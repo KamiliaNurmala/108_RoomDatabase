@@ -1,5 +1,6 @@
 package com.example.praktikum9.repositori
 
+import android.app.Application
 import android.content.Context
 import com.example.praktikum9.room.DatabaseSiswa
 
@@ -14,4 +15,19 @@ class ContainerDataApp(private val context: Context) :
              OfflineRepositoriSiswa(
             DatabaseSiswa.getDatabase(context).siswaDao())
         }
+}
+
+class AplikasiSiswa : Application() {
+    /**
+     * AppContainer instance digunakan oleh kelas-kelas di bawahnya untuk
+     * menyediakan dependensi
+     */
+
+
+    lateinit var container: ContainerApp
+
+    override fun onCreate() {
+        super.onCreate()
+        container = ContainerDataApp(this)
+    }
 }
