@@ -1,9 +1,9 @@
 package com.example.praktikum9.room
 
+import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-
-@Entitiy(tableName = "tblSiswa")
+@Entity(tableName = "tblSiswa")
 data class Siswa(
     @PrimaryKey(autoGenerate = true)
     val id : Int = 0,
