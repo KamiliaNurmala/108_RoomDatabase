@@ -52,6 +52,11 @@ fun HostNavigasi(
             navigteToEditItem = {navController.navigate("${DestinasiEditSiswa.route}/$it")},
             navigateBack = {navController.navigateUp()})
         }
-        composable(route = DestinasiEditSiswa.routeWithArgs,){}
+        composable(route = DestinasiEditSiswa.routeWithArgs,
+            arguments = listOf(navArgument(DestinasiEditSiswa.itemIdArg){
+            type = NavType.IntType
+        })){
+
+        }
     }
 }
