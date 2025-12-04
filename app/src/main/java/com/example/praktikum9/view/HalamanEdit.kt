@@ -28,9 +28,19 @@ fun EditSiswaScreen(
                 canNavigateBack = true,
                 navigateUp = onNavigateUp
             )
-        }
-    )
-    {
-
+        }, modifier = modifier
+    ) { innerPadding ->
+        val coroutineScoper = rememberCoroutineScope()
+        EntrySiswaBody(
+            uiStateSiswa = viewModel.uiStateSiswa,
+            onSiswaValueChange = viewModel::updateUiState,
+            onSaveClick = {
+                        coroutineScoper.launch {
+                            viewModel.updateSiswa()
+                            navigateBack()
+                        }
+            },
+            modifier = Modifier.padding(innerPadding)
+        )
     }
 }
