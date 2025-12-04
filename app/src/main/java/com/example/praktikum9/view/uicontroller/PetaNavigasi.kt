@@ -14,6 +14,7 @@ import com.example.praktikum9.view.EntrySiswaScreen
 import com.example.praktikum9.view.HomeScreen
 import com.example.praktikum9.view.route.DestinasiDetailSiswa
 import com.example.praktikum9.view.route.DestinasiDetailSiswa.itemIdArg
+import com.example.praktikum9.view.route.DestinasiEditSiswa
 import com.example.praktikum9.view.route.DestinasiEntry
 import com.example.praktikum9.view.route.DestinasiHome
 
@@ -48,8 +49,9 @@ fun HostNavigasi(
                 type = NavType.IntType
             })
         ) { DetailSiswaScreen(
-//            navigteToEditItem = {navController.navigate("$(DestinasiEditSiswa")}
+            navigteToEditItem = {navController.navigate("${DestinasiEditSiswa.route}/$it")},
             navigateBack = {navController.navigateUp()})
         }
+
     }
 }
