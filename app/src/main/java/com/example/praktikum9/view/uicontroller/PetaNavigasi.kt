@@ -50,8 +50,9 @@ fun HostNavigasi(
                 type = NavType.IntType
             })
         ) { DetailSiswaScreen(
-            navigteToEditItem = {navController.navigate("${DestinasiEditSiswa.route}/$it")},
-            navigateBack = {navController.navigateUp()})
+            navigateToEditItem = { navController.navigate("${DestinasiEditSiswa.route}/$it") },
+            navigateBack = { navController.navigateUp() }
+        )
         }
         composable(route = DestinasiEditSiswa.routeWithArgs,
             arguments = listOf(navArgument(DestinasiEditSiswa.itemIdArg){
